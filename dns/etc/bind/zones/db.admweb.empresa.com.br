@@ -1,0 +1,21 @@
+;
+; BIND data file for local loopback interface
+;
+$TTL    604800
+@       IN      SOA     dns.admweb.empresa.com.br. root.admweb.empresa.com.br. (
+                              1         ; Serial
+                         604800         ; Refresh
+                          86400         ; Retry
+                        2419200         ; Expire
+                         604800 )       ; Negative Cache TTL
+;
+
+admweb.empresa.com.br.   IN      NS      dns.admweb.empresa.com.br.
+dns     IN      A       10.0.0.253
+squid   IN      A       10.0.0.252
+email   IN      A       10.10.10.4
+admweb.empresa.com.br.  IN      MX      10      email.admweb.empresa.com.br.
+samba   IN      A       10.0.0.251
+www     IN      A       10.10.10.3
+www.admweb.empresa.com.br     IN      CNAME   app.admweb.empresa.com.br.
+ftp     IN      A       10.10.10.2

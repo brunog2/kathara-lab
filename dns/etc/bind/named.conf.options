@@ -1,0 +1,18 @@
+acl "trusted" {
+    10.0.0.0/24;
+    192.168.0.0/24;
+    10.10.10.0/24;
+};
+
+options {
+    directory "/var/cache/bind"; #Indica o local onde ser~ao
+    recursion yes; # Habilita consultas recursivas
+    allow-recursion { trusted; };
+    listen-on { 10.0.0.253; };
+    allow-transfer { none; }; # Desabilita a zona de transferencia
+    # Especifica os encaminhadores que serao utilizados para o caso de nao ser possivel resolver um dado dominio
+    forwarders {
+        8.8.8.8;
+        8.8.4.4;
+    };
+};

@@ -1,0 +1,7 @@
+ifconfig eth2 192.168.0.1/24
+ifconfig eth0 10.0.0.1/24
+ifconfig eth1 10.10.10.5/24
+
+route add default gw 10.10.10.1
+
+echo "nameserver 10.0.0.253" > /etc/resolv.conf

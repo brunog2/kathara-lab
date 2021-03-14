@@ -1,0 +1,11 @@
+ifconfig eth0 10.0.0.253/24
+
+route add -net gw 192.168.0.0/24
+route add -net gw 10.10.10.0/24
+route add default gw 10.0.0.1
+
+echo "nameserver 8.8.8.8" > /etc/resolv.conf
+
+apt update
+echo -e "N\nN\nN" | apt install bind9 bind9utils bind9-doc bind9-host -y
+/etc/init.d/named restart

@@ -1,0 +1,21 @@
+echo "nameserver 10.0.0.253" > /etc/resolv.conf
+
+ifconfig eth0 10.10.10.2/24
+
+route add default gw 10.10.10.5
+
+sleep 2m
+
+apt update -y
+apt install proftpd -y
+
+echo "10.10.10.2 ftp" >> /etc/hosts
+
+useradd -m -s /bin/bash usuario1
+useradd -m -s /bin/bash usuario2
+useradd -m -s /bin/bash usuario3
+echo -e "minha-senha\nminha-senha" | passwd usuario1
+echo -e "minha-senha\nminha-senha" | passwd usuario2
+echo -e "minha-senha\nminha-senha" | passwd usuario3
+
+/etc/init.d/proftpd start

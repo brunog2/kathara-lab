@@ -1,0 +1,9 @@
+zone "admweb.empresa.com.br" {
+    type master;
+    file "/etc/bind/zones/db.admweb.empresa.com.br";
+};
+
+zone "0.0.10.in-add.arpa" {
+    type master;
+    file "/etc/bind/zones/db.10.0.0";
+};
