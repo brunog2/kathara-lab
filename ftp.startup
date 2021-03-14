@@ -18,4 +18,4 @@ echo -e "minha-senha\nminha-senha" | passwd usuario1
 echo -e "minha-senha\nminha-senha" | passwd usuario2
 echo -e "minha-senha\nminha-senha" | passwd usuario3
 
-/etc/init.d/proftpd start
+/etc/init.d/proftpd restart
